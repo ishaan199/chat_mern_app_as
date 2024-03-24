@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Login from "./Components/login/Login";
+import MainContainer from "./Components/mainContainer/MainContainer";
+import { Routes, Route } from "react-router-dom";
+import Welcome from "./Components/welcome/Welcome";
+import ChatArea from "./Components/chatArea/ChatArea";
+import CreateGroups from "./Components/newGroups/CreateGroups";
+import Users from "./Components/users/Users";
+import Groups from "./Components/groups/Groups";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <MainContainer/> */}
+      {/* <Login/> */}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="app" element={<MainContainer />}>
+          <Route path="welcome" element={<Welcome />}></Route>
+          <Route path="chat" element={<ChatArea />}></Route>
+          <Route path="users" element={<Users />}></Route>
+          <Route path="groups" element={<Groups/>}></Route>
+          <Route path="create-groups" element={<CreateGroups />}></Route>
+        </Route>
+      </Routes>
     </div>
   );
 }
