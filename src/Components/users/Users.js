@@ -2,6 +2,7 @@ import { IconButton } from "@mui/material";
 import "../styles/myStyles.css";
 import SearchIcon from "@mui/icons-material/Search";
 export default function Users() {
+  
   return (
     <div className="list-container">
       <div className="ug-header">
